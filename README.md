@@ -26,8 +26,8 @@
 
 ## 기획 및 설계
 + [프로젝트 칸반보드](https://github.com/jaelyung/Lets-chat/projects/1)
-+ 기능 명세서
-+ 화면 기획
++ [기능 명세서](https://ruddy-joke-db6.notion.site/6752f876bc2440bcad3fef7ed8e08565)
++ [화면 기획](https://ruddy-joke-db6.notion.site/6cdf433392274722a62dd0421077832e)
 + DB 설계
 + DB 스키마
 <br>
