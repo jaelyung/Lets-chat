@@ -2,10 +2,12 @@ package chatting.chatting.member.service;
 
 import chatting.chatting.member.domain.Member;
 import chatting.chatting.member.repository.MemberRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
