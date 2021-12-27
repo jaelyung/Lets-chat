@@ -30,6 +30,7 @@
 + [화면 기획](https://ruddy-joke-db6.notion.site/6cdf433392274722a62dd0421077832e)
 + DB 설계
 + DB 스키마
++ [코드 작성법](https://ruddy-joke-db6.notion.site/ed0c2561c2534f80ab808c2836f89388)
 <br>
 
 ### 참고자료
