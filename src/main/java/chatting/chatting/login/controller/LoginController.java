@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
@@ -20,8 +21,8 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @PostMapping("/login")
-    public String login(@ModelAttribute("loginForm") LoginForm form, BindingResult bindingResult) {
+    @GetMapping(value = "/login")
+    public String login(@RequestParam LoginForm form, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "login/loginForm";
         }
@@ -35,6 +36,6 @@ public class LoginController {
 
         //로그인 성공처리 TODO
 
-        return "login/loginSuccess";
+        return "redirect:/";
     }
 }
