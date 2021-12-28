@@ -20,7 +20,7 @@
 + Back
   + JAVA
   + Spring Boot
-  + H2
+  + MySQL
  
 <br>
 
