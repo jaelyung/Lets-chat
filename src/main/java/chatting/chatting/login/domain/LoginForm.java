@@ -1,13 +1,12 @@
 package chatting.chatting.login.domain;
 
-import com.sun.istack.NotNull;
 
 public class LoginForm {
 
-    @NotNull
+
     private String loginId;
 
-    @NotNull
+
     private String password;
 
     public String getLoginId() {
