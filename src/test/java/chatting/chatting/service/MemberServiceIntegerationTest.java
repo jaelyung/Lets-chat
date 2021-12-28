@@ -29,8 +29,8 @@ class MemberServiceIntegerationTest {
     void join() throws Exception{
         //given
         Member member = new Member();
-        member.setId("id1");
-        member.setPassword("id1");
+        member.setId("id22");
+        member.setPassword("id22");
         member.setName("김재령");
 
         //when
@@ -45,13 +45,13 @@ class MemberServiceIntegerationTest {
     void 중복_회원_예외() throws Exception {
         //given
         Member member1 = new Member();
-        member1.setId("id1");
-        member1.setPassword("id1");
+        member1.setId("id22");
+        member1.setPassword("id22");
         member1.setName("김재령");
 
         Member member2 = new Member();
-        member2.setId("id1");
-        member2.setPassword("id1");
+        member2.setId("id22");
+        member2.setPassword("id22");
         member2.setName("김재령");
 
         //when
