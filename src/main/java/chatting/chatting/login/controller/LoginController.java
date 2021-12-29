@@ -6,10 +6,7 @@ import chatting.chatting.member.domain.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class LoginController {
@@ -21,8 +18,8 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @GetMapping(value = "/login")
-    public String login(@RequestParam LoginForm form, BindingResult bindingResult) {
+    @PostMapping(value = "/login")
+    public String login(LoginForm form, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "login/loginForm";
         }

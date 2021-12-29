@@ -28,17 +28,17 @@ public class MemberService {
      */
     public int join(Member member) {
 
-        validateDuplicateMember(member); //중복 회원 검증
+//        validateDuplicateMember(member); //중복 회원 검증
         int result = memberMapper.save(member);
         return result;
     }
 
-    private void validateDuplicateMember(Member member) {
-        memberMapper.findById(member.getId())
-                .ifPresent(member1 -> {
-                    throw new IllegalStateException("이미 존재하는 회원입니다.");
-                });
-    }
+//    private void validateDuplicateMember(Member member) {
+//        memberMapper.findById(member.getId())
+//                .ifPresent(member1 -> {
+//                    throw new IllegalStateException("이미 존재하는 회원입니다.");
+//                });
+//    }
 
     /**
      * 전체 회원 조회
@@ -50,7 +50,7 @@ public class MemberService {
     /**
      * 회원 조회 - ID
      */
-    public Optional<Member> findOne(String memberId) {
-        return memberMapper.findById(memberId);
-    }
+//    public Optional<Member> findOne(String memberId) {
+//        return memberMapper.findById(memberId);
+//    }
 }

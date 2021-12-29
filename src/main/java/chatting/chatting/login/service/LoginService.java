@@ -9,17 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginService {
 
-    //private final MemberRepository memberRepository;
     @Autowired
     private MemberMapper memberMapper;
 
-//    public LoginService(MemberRepository memberRepository) {
-//        this.memberMapper = memberRepository;
-//    }
-
     public Member login(String loginId, String password) {
-         return memberMapper.findById(loginId)
-                .filter(m -> m.getPassword().equals(password))
-                .orElse(null);
+         return memberMapper.findById(loginId);
     }
 }
