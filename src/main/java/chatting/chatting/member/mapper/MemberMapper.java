@@ -17,12 +17,12 @@ public interface MemberMapper {
     /**
      * 회원조회 - ID
      */
-    Optional<Member> findById(String id);
+    Member findById(String id);
 
     /**
      * 회원조회 - NAME
      */
-    Optional<Member> findByName(String name);
+    Member findByName(String name);
 
     /**
      * 전체회원조회
