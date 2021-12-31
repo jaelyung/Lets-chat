@@ -31,6 +31,7 @@
 + DB 설계
 + DB 스키마
 + [코드 작성법](https://ruddy-joke-db6.notion.site/ed0c2561c2534f80ab808c2836f89388)
++ [DB빌드업](https://www.notion.so/DB-11529239670842379574a9c290f694e0)
 <br>
 
 ### 참고자료
