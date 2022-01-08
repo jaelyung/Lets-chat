@@ -7,5 +7,7 @@
     </settings>
     <typeAliases>
         <typeAlias type="chatting.chatting.member.domain.Member" alias="Member"/>
+        <typeAlias type="chatting.chatting.member.domain.MemberForm" alias="MemberForm"/>
+        <typeAlias type="chatting.chatting.login.domain.LoginForm" alias="LoginForm"/>
     </typeAliases>
 </configuration>
