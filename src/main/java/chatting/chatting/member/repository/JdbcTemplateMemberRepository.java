@@ -2,15 +2,10 @@ package chatting.chatting.member.repository;
 
 import chatting.chatting.member.domain.Member;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 import javax.sql.DataSource;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 public class JdbcTemplateMemberRepository implements MemberRepository{
@@ -51,9 +46,9 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
     private RowMapper<Member> memberRowMapper() {
         return (rs, rowNum) -> {
             Member member = new Member();
-            member.setId(rs.getString("id"));
-            member.setId(rs.getString("password"));
-            member.setName(rs.getString("name"));
+            member.setMemberId(rs.getString("id"));
+            member.setMemberId(rs.getString("password"));
+            member.setMemberNm(rs.getString("name"));
             return member;
         };
     }
