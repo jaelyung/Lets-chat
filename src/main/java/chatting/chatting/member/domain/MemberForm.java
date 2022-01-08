@@ -1,4 +1,4 @@
-package chatting.chatting.member.controller;
+package chatting.chatting.member.domain;
 
 public class MemberForm {
 

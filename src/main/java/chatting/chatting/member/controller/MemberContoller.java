@@ -1,6 +1,7 @@
 package chatting.chatting.member.controller;
 
 import chatting.chatting.member.domain.Member;
+import chatting.chatting.member.domain.MemberForm;
 import chatting.chatting.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
