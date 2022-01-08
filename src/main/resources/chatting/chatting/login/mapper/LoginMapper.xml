@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="chatting.chatting.login.mapper.LoginMapper">
-    <select id="memberLogin" resultType="Member">
-        SELECT ID
-             , NAME
+    <select id="memberLogin" parameterType="LoginForm" resultType="Member">
+        SELECT MEMBER_ID
+             , MEMBER_NM
           FROM MEMBER
-         WHERE ID = #{id}
-           AND PASSWORD = #{password}
+         WHERE MEMBER_ID = #{memberId}
+           AND MEMBER_PW = #{memberPw}
     </select>
 </mapper>

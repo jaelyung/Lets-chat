@@ -2,21 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="chatting.chatting.member.mapper.MemberMapper">
     <select id="findAll" resultType="Member">
-        SELECT ID
-             , NAME
-             , PASSWORD
+        SELECT MEMBER_ID
+             , MEMBER_NM
+             , MEMBER_PW
           FROM MEMBER
     </select>
 
     <insert id="save" parameterType="Member">
-        INSERT INTO MEMBER (ID, NAME, PASSWORD)
-        VALUES ( #{id}, #{name}, #{password} )
+        INSERT INTO MEMBER (MEMBER_ID, MEMBER_NM, MEMBER_PW)
+        VALUES ( #{memberId}, #{memberNm}, #{memberPw} )
     </insert>
 
     <select id="findById" resultType="Member">
-        SELECT ID
-             , NAME
+        SELECT MEMBER_ID
+             , MEMBER_NM
           FROM MEMBER
-         WHERE ID = #{id}
+         WHERE MEMBER_ID = #{memberId}
     </select>
 </mapper>

@@ -29,9 +29,9 @@ public class MemberContoller {
     public String create(MemberForm form) {
 
         Member member = new Member();
-        member.setId(form.getId());
-        member.setPassword(form.getPassword());
-        member.setName(form.getName());
+        member.setMemberId(form.getMemberId());
+        member.setMemberPw(form.getMemberPw());
+        member.setMemberNm(form.getMemberNm());
 
         memberService.join(member);
 

@@ -22,15 +22,15 @@ class MemoryMemberReporsitoryTest {
     void save() {
         //given
         Member member = new Member();
-        member.setId("id1");
-        member.setPassword("id1");
-        member.setName("김재령");
+        member.setMemberId("id1");
+        member.setMemberPw("id1");
+        member.setMemberNm("김재령");
 
         //when
         reporsitory.save(member);
 
         //then
-        Member result = reporsitory.findById(member.getId()).get();
+        Member result = reporsitory.findById(member.getMemberId()).get();
         assertThat(result).isEqualTo(member);
     }
 
@@ -38,15 +38,15 @@ class MemoryMemberReporsitoryTest {
     void findById() {
         //given
         Member member1 = new Member();
-        member1.setId("id1");
-        member1.setPassword("id1");
-        member1.setName("김재령");
+        member1.setMemberId("id1");
+        member1.setMemberPw("id1");
+        member1.setMemberNm("김재령");
         reporsitory.save(member1);
 
         Member member2 = new Member();
-        member2.setId("id2");
-        member2.setPassword("id2");
-        member2.setName("김재령");
+        member2.setMemberId("id2");
+        member2.setMemberPw("id2");
+        member2.setMemberNm("김재령");
         reporsitory.save(member2);
 
         //when
@@ -60,15 +60,15 @@ class MemoryMemberReporsitoryTest {
     void findByName() {
         //given
         Member member1 = new Member();
-        member1.setId("id1");
-        member1.setPassword("id1");
-        member1.setName("김재령");
+        member1.setMemberId("id1");
+        member1.setMemberPw("id1");
+        member1.setMemberNm("김재령");
         reporsitory.save(member1);
 
         Member member2 = new Member();
-        member2.setId("id2");
-        member2.setPassword("id2");
-        member2.setName("김재령2");
+        member2.setMemberId("id2");
+        member2.setMemberPw("id2");
+        member2.setMemberNm("김재령2");
         reporsitory.save(member2);
 
         //when
@@ -82,15 +82,15 @@ class MemoryMemberReporsitoryTest {
     void findAll() {
         //given
         Member member1 = new Member();
-        member1.setId("id1");
-        member1.setPassword("id1");
-        member1.setName("김재령");
+        member1.setMemberId("id1");
+        member1.setMemberPw("id1");
+        member1.setMemberNm("김재령");
         reporsitory.save(member1);
 
         Member member2 = new Member();
-        member2.setId("id2");
-        member2.setPassword("id2");
-        member2.setName("김재령2");
+        member2.setMemberId("id2");
+        member2.setMemberPw("id2");
+        member2.setMemberNm("김재령2");
         reporsitory.save(member2);
 
         //when

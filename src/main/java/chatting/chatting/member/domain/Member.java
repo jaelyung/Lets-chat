@@ -6,31 +6,31 @@ package chatting.chatting.member.domain;
 
 public class Member {
 
-    private String id;
-    private String password;
-    private String name;
+    private String memberId;
+    private String memberPw;
+    private String memberNm;
 
-    public String getId() {
-        return id;
+    public String getMemberId() {
+        return memberId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
     }
 
-    public String getPassword() {
-        return password;
+    public String getMemberPw() {
+        return memberPw;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setMemberPw(String memberPw) {
+        this.memberPw = memberPw;
     }
 
-    public String getName() {
-        return name;
+    public String getMemberNm() {
+        return memberNm;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMemberNm(String memberNm) {
+        this.memberNm = memberNm;
     }
 }

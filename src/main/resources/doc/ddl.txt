@@ -1,3 +1,8 @@
-//member, chatboard 테이블 생성
+/* member, chatboard 테이블 생성 */
 create table member ( id varchar(20), name varchar(20),  password varchar(20));
 create table chatboard (member_id varchar(20), content_id varchar(20), content varchar(500), send_dt date, receiver_id varchar(20), check_yn varchar(1) );
+
+/* member 테이블 컬럼명 변경 */
+ALTER TABLE MEMBER CHANGE COLUMN ID MEMBER_ID varchar(20);
+ALTER TABLE MEMBER CHANGE COLUMN NAME MEMBER_NM varchar(20);
+ALTER TABLE MEMBER CHANGE COLUMN PASSWORD MEMBER_PW varchar(20);

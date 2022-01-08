@@ -29,7 +29,7 @@ public class MemberServiceImpl implements MemberService {
      * 중복회원검증
      */
     private void validateDuplicateMember(Member member) {
-        Member result = memberMapper.findById(member.getId());
+        Member result = memberMapper.findById(member.getMemberId());
         if(result != null) {
             throw new IllegalStateException("이미 존재하는 회원입니다.");
         }
