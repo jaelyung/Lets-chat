@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>chatting</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        *{margin:0; padding:0}
+        body{background-color: black;}
+        #wrap {width: 1000px; height: 100vh;margin: 0 auto; font-size: 16px;display: flex; justify-content: center;align-items: center;flex-direction: column;background-color: #fff;}
+        header {width: 1000px; height: 100px; line-height: 100px;background-color: rgb(139, 136, 136);}
+        main {width: 1000px; height: 600px; line-height: 600px;background-color: rgb(8, 8, 8);display: flex;justify-content: center;align-items: center;}
+		section {width: 300px; height: 550px; line-height: 250px;background-color: #d4d4d4;}
+        article {width: 100%;}
+        footer {clear: both; width: 1000px; height: 100px; line-height: 100px;background-color: #fff;}
+
+        .blind{display: none;}
+        .title{text-align: center;}
+        .flex-container{display: flex;flex-direction: column;}
+        .flex-item{flex-grow: 1;flex-shrink: 1;flex-basis: 0;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h2 class="title">LET'S CHAT</h2>
+        </header>
+        <section>
+            <article class="flex-container">
+                <form action="/login" method="POST">
+                    <h3 class="title flex-item">로그인</h3>
+                    <label for="memberId">아이디</label>
+                    <input type="text" name="memberId" id="memberId" class="flex-item">
+                    <label for="memberPw">비밀번호</label>
+                    <input type="text" name="memberPw" id="memberPw" class="flex-item">
+                    <button type="submit">로그인</button>
+                    <div class="join flex-item">
+                        <a href="/members/new">회원가입</a>
+                        <a href="/members">회원조회</a>
+                    </div>
+                </form>                
+            </article>
+        </section>
+        <aside class="blind">광고영역</aside>
+        <footer></footer>
+    </div>
+</body>
+</html>
