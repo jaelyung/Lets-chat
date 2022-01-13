@@ -1,6 +1,6 @@
 /* member, chatboard 테이블 생성 */
-create table member ( id varchar(20), name varchar(20),  password varchar(20));
-create table chatboard (member_id varchar(20), content_id varchar(20), content varchar(500), send_dt date, receiver_id varchar(20), check_yn varchar(1) );
+create table member ( id varchar(20), name varchar(20),  password varchar(20))DEFAULT CHARSET=utf8;
+create table chatboard (member_id varchar(20), content_id varchar(20), content varchar(500), send_dt date, receiver_id varchar(20), check_yn varchar(1) )DEFAULT CHARSET=utf8;
 
 /* member 테이블 컬럼명 변경 */
 ALTER TABLE MEMBER CHANGE COLUMN ID MEMBER_ID varchar(20);
