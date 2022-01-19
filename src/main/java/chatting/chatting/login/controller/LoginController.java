@@ -33,6 +33,6 @@ public class LoginController {
 
         //로그인 성공처리 TODO
 
-        return "redirect:/";
+        return "main/main";
     }
 }
