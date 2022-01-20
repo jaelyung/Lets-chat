@@ -3,9 +3,15 @@
 <head>
     <title>chatting</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script th:inline="javascript">
+    /*<![CDATA[*/
         $(document).ready(function(){
-            const username = ${memberNm};
+            $("#sendMsgBtn").on("click", function(e) {
+                send();
+            });
+
+            const username = /*[[${username}]]*/;
 
             const websocket = new WebSocket("ws://localhost:8080/main/newChatRoom");
 
@@ -68,8 +74,8 @@
                     $("#msgArea").append(str);
                 }
             }
-        )};
-
+        });
+/*]]>*/
     </script>
 </head>
 <body>
@@ -82,7 +88,7 @@
                     </div>
                     <div class="chat-input">
                         <input type="text" name="chatMsg" id="chatMsg">
-                        <button type="button" id="sendMsgBtn"></button>
+                        <button type="button" id="sendMsgBtn">전송</button>
                     </div>
                 </div>
             </div>
