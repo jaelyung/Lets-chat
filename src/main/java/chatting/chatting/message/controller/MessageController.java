@@ -1,13 +1,11 @@
-package chatting.chatting.main.controller;
+package chatting.chatting.message.controller;
 
-import chatting.chatting.main.service.MainService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MainController {
+public class MessageController {
 
 //    private final MainService mainService;
 //
