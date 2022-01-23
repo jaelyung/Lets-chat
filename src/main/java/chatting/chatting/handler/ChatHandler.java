@@ -1,8 +1,12 @@
 package chatting.chatting.handler;
 
+import chatting.chatting.message.domain.Message;
+import chatting.chatting.message.domain.MessageRoom;
+import chatting.chatting.message.service.MessageService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
@@ -11,14 +15,25 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 @Component
 public class ChatHandler extends TextWebSocketHandler {
 
+    private final MessageService messageService;
+    private final ObjectMapper objectMapper;
+
+    @Autowired
+    public ChatHandler(MessageService messageService, ObjectMapper objectMapper) {
+        this.messageService = messageService;
+        this.objectMapper = objectMapper;
+    }
+
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         String payload = message.getPayload();
 
         log.info("payload : {}", payload);
 
-        TextMessage initialGreeting = new TextMessage("Welcome to chat server");
-        session.sendMessage(initialGreeting);
+        Message msg = objectMapper.readValue(payload, Message.class);
+        MessageRoom messageRoom = messageService.findById(msg.getRoomId());
+        messageRoom.handleActions(session, msg, messageService);
+
     }
 
     /* Client 접속시 호출되는 메서드 */

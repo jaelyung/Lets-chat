@@ -1,7 +1,67 @@
 package chatting.chatting.message.service.impl;
 
+import chatting.chatting.message.domain.MessageRoom;
+import chatting.chatting.message.service.MessageService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.socket.TextMessage;
+import org.springframework.web.socket.WebSocketSession;
 
+import javax.annotation.PostConstruct;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+@Slf4j
 @Service
-public class MessageServiceImpl {
+public class MessageServiceImpl implements MessageService {
+
+//    private final MessageMapper messageMapper;
+    private final ObjectMapper objectMapper;
+    private Map<String, MessageRoom> messageRooms;
+
+    @Autowired
+    public MessageServiceImpl(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
+//    @Autowired
+//    public MessageServiceImpl(MessageMapper messageMapper) {
+//        this.messageMapper = messageMapper;
+//    }
+
+    @PostConstruct
+    @Override
+    public void init() {
+        messageRooms = new LinkedHashMap<>();
+    }
+
+    @Override
+    public List<MessageRoom> findAllRoom() {
+        return new ArrayList<>(messageRooms.values());
+    }
+
+    @Override
+    public MessageRoom findById(String roomId) {
+        return messageRooms.get(roomId);
+    }
+
+    @Override
+    public MessageRoom createRoom(String name) {
+        String roomId = name;
+        return MessageRoom.builder().roomId(roomId).build();
+    }
+
+    @Override
+    public <T> void sendMessage(WebSocketSession session, T message) {
+        try {
+            session.sendMessage(new TextMessage(objectMapper.writeValueAsString(message)));
+        } catch (IOException e) {
+            log.error(e.getMessage(), e);
+        }
+    }
 }

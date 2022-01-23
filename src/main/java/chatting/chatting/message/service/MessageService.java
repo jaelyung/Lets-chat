@@ -1,10 +1,19 @@
 package chatting.chatting.message.service;
 
-import org.springframework.web.socket.TextMessage;
+import chatting.chatting.message.domain.MessageRoom;
 import org.springframework.web.socket.WebSocketSession;
 
-public class MessageService {
-    public <T> void sendMessage(WebSocketSession session, T message) {
+import java.util.List;
 
-    }
+public interface MessageService {
+
+    void init();
+
+    List<MessageRoom> findAllRoom();
+
+    MessageRoom findById(String roomId);
+
+    MessageRoom createRoom(String name);
+
+    <T> void sendMessage(WebSocketSession session, T message);
 }
