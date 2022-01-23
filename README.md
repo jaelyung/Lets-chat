@@ -44,3 +44,4 @@
 + [스프링입문강의](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8)
 + [반응형 웹사이트 만들기](https://wtss.tistory.com/206)
 + [스프링부트에서 채팅프로그램만들기](https://myhappyman.tistory.com/100)
++ [오늘의 테크용어 - 웹소켓이 뭐냐면 by 코딩애플](https://www.youtube.com/watch?v=yXPCg5eupGM)
