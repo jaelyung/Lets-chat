@@ -5,9 +5,9 @@ import chatting.chatting.login.mapper.LoginMapper;
 import chatting.chatting.login.service.LoginService;
 import chatting.chatting.member.domain.Member;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class LoginServiceImpl implements LoginService {
 
     @Autowired

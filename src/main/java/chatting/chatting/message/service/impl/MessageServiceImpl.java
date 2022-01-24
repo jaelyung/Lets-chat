@@ -3,9 +3,9 @@ package chatting.chatting.message.service.impl;
 import chatting.chatting.message.domain.MessageRoom;
 import chatting.chatting.message.service.MessageService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
@@ -17,17 +17,13 @@ import java.util.List;
 import java.util.Map;
 
 @Slf4j
-@Service
+@Component
+@RequiredArgsConstructor
 public class MessageServiceImpl implements MessageService {
 
 //    private final MessageMapper messageMapper;
     private final ObjectMapper objectMapper;
     private Map<String, MessageRoom> messageRooms;
-
-    @Autowired
-    public MessageServiceImpl(ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
-    }
 
 //    @Autowired
 //    public MessageServiceImpl(MessageMapper messageMapper) {

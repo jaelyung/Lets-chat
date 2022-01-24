@@ -4,12 +4,12 @@ import chatting.chatting.member.domain.Member;
 import chatting.chatting.member.mapper.MemberMapper;
 import chatting.chatting.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 //@Transactional
-@Service
+@Component
 public class MemberServiceImpl implements MemberService {
 
     @Autowired
