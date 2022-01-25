@@ -49,7 +49,10 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public MessageRoom createRoom(String name) {
         String roomId = name;
-        return MessageRoom.builder().roomId(roomId).build();
+        MessageRoom msgRoom =  MessageRoom.builder().roomId(roomId).build();
+        messageRooms.put(roomId, msgRoom);
+
+        return msgRoom;
     }
 
     @Override
