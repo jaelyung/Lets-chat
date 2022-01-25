@@ -50,7 +50,7 @@ public class MessageServiceImpl implements MessageService {
     public MessageRoom createRoom(String name) {
         String roomId = name;
         MessageRoom msgRoom =  MessageRoom.builder().roomId(roomId).build();
-        messageRooms.put(roomId, msgRoom);
+        messageRooms.put(msgRoom.getRoomId(), msgRoom);
 
         return msgRoom;
     }
