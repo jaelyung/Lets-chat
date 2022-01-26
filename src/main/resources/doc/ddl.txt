@@ -6,3 +6,6 @@ create table chatboard (member_id varchar(20), content_id varchar(20), content v
 ALTER TABLE MEMBER CHANGE COLUMN ID MEMBER_ID varchar(20);
 ALTER TABLE MEMBER CHANGE COLUMN NAME MEMBER_NM varchar(20);
 ALTER TABLE MEMBER CHANGE COLUMN PASSWORD MEMBER_PW varchar(20);
+
+/* 채팅방(CHATROOM) 테이블 생성 */
+CREATE TABLE CHATROOM (ROOM_ID INT, PACN_ID1 varchar(20), PACN_ID2 varchar(20))DEFAULT CHARSET=utf8;
