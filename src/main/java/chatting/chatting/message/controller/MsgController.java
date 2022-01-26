@@ -6,7 +6,6 @@ import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/chat")
 public class MsgController {
 
     private final SimpMessageSendingOperations sendingOperations;

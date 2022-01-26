@@ -39,10 +39,10 @@ public class MsgRoomController {
     public String roomEnter(Model model, @ApiParam(value = "방 Id", required = true) @PathVariable String roomId, HttpServletRequest request) {
 
         HttpSession session = request.getSession();
-        String loginId = (String) session.getAttribute("loginId");
+        String loginNm = (String) session.getAttribute("loginNm");
 
         model.addAttribute("roomId", roomId);
-        model.addAttribute("sender", loginId);
+        model.addAttribute("sender", loginNm);
 
         return "comm/roomEnter";
     }

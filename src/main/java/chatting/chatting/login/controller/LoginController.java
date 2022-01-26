@@ -38,12 +38,14 @@ public class LoginController {
             bindingResult.reject("loginFail", "아이디 또는 비밀번호가 맞지 않습니다.");
             return "login/loginForm";
         } else {
-            log.info("로그인ID ::: " + form.getMemberId());
-            session.setAttribute("loginId", form.getMemberId());
+            log.info("로그인ID ::: " + loginMember.getMemberId());
+            log.info("로그인NM ::: " + loginMember.getMemberNm());
+            session.setAttribute("loginId", loginMember.getMemberId());
+            session.setAttribute("loginNm", loginMember.getMemberNm());
         }
 
         //로그인 성공처리 TODO
 
-        return "chat/main";
+        return "comm/main";
     }
 }
