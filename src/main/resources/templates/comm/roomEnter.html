@@ -36,6 +36,7 @@
 
         function disconnect() {
             if(stompClient != null) {
+                stompClient.send("/pub/comm/message", {}, JSON.stringify({'messageType':'COMM', 'roomId':roomId, 'sender':sender, 'message':sender + "님이 나갔습니다."}));
                 stompClient.disconnect();
             }
         }
