@@ -45,4 +45,5 @@
 + [반응형 웹사이트 만들기](https://wtss.tistory.com/206)
 + [스프링부트에서 채팅프로그램만들기](https://myhappyman.tistory.com/100)
 + [SpringBootWebSocket(1)-웹소켓 이해하기_채팅 구현](https://ws-pace.tistory.com/105)
++ [Stomp와 SockJS를 이용한 메세지 전송](https://salepark.tistory.com/81)
 + [오늘의 테크용어 - 웹소켓이 뭐냐면 by 코딩애플](https://www.youtube.com/watch?v=yXPCg5eupGM)
