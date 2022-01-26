@@ -9,8 +9,8 @@
     <script th:inline="javascript">
     /*<![CDATA[*/
 
-        var roomId = $("#roomId").val();
-        var sender = $("#sender").val();
+        var roomId = [[${roomId}]];
+        var sender = [[${sender}]];
 
         $(document).ready(function(){
 
@@ -43,7 +43,6 @@
         function send() {
             var data = {'messageType':'COMM', 'roomId':roomId, 'sender':sender, 'message':$("#chatMsg").val()};
             stompClient.send("/pub/comm/message", {}, JSON.stringify(data));
-            showMessage(data);
             $("#chatMsg").val('');
         }
 
