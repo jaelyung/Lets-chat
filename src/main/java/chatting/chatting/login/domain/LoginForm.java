@@ -3,25 +3,22 @@ package chatting.chatting.login.domain;
 
 public class LoginForm {
 
+    private String memberId;
+    private String memberPw;
 
-    private String loginId;
-
-
-    private String password;
-
-    public String getLoginId() {
-        return loginId;
+    public String getMemberId() {
+        return memberId;
     }
 
-    public void setLoginId(String loginId) {
-        this.loginId = loginId;
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
     }
 
-    public String getPassword() {
-        return password;
+    public String getMemberPw() {
+        return memberPw;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setMemberPw(String memberPw) {
+        this.memberPw = memberPw;
     }
 }

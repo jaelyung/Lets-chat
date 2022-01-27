@@ -11,7 +11,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan("chatting.chatting.member.mapper")
+@MapperScan("chatting.chatting.*.mapper")
 public class MySQLConfig {
 
 
@@ -21,7 +21,7 @@ public class MySQLConfig {
         sessionFactory.setDataSource(dataSource);
 
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sessionFactory.setMapperLocations(resolver.getResources("classpath:chatting/chatting/member/mapper/*.xml"));
+        sessionFactory.setMapperLocations(resolver.getResources("classpath:chatting/chatting/*/mapper/*.xml"));
 
         Resource myBatisConfig = new PathMatchingResourcePatternResolver().getResource("classpath:mybatis-config.xml");
         sessionFactory.setConfigLocation(myBatisConfig);

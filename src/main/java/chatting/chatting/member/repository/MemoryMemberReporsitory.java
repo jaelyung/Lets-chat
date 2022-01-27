@@ -13,7 +13,7 @@ public class MemoryMemberReporsitory implements MemberRepository {
      */
     @Override
     public Member save(Member member) {
-        store.put(member.getId(), member);
+        store.put(member.getMemberId(), member);
         return member;
     }
 
@@ -31,7 +31,7 @@ public class MemoryMemberReporsitory implements MemberRepository {
     @Override
     public Optional<Member> findByName(String name) {
         return store.values().stream()
-                .filter(member -> member.getName().equals(name))
+                .filter(member -> member.getMemberNm().equals(name))
                 .findAny();
     }
 

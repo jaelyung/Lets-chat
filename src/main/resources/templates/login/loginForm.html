@@ -15,13 +15,13 @@
 
                 <div class="login">
                     <h1>로그인</h1>
-                    <label for="loginId">아이디</label>
-                    <input type="text" id="loginId" th:field="*{loginId}" th:errorclass="field-error">
-                    <div class="field-error" th:errors="*{loginId}" />
+                    <label for="memberId">아이디</label>
+                    <input type="text" id="memberId" th:field="*{memberId}" th:errorclass="field-error">
+                    <div class="field-error" th:errors="*{memberId}" />
 
-                    <label for="password">비밀번호</label>
-                    <input type="text" id="password" th:field="*{password}" th:errorclass="field-error">
-                    <div class="field-error" th:errors="*{password}" />
+                    <label for="memberPw">비밀번호</label>
+                    <input type="text" id="memberPw" th:field="*{memberPw}" th:errorclass="field-error">
+                    <div class="field-error" th:errors="*{memberPw}" />
                 </div>
                 <button type="submit">로그인</button>
                 <button type="button" onclick="location.href='/home.html'" th:onclick="|location.href='@{/}'|">취소</button>

@@ -1,6 +1,7 @@
 package chatting.chatting.member.controller;
 
 import chatting.chatting.member.domain.Member;
+import chatting.chatting.member.domain.MemberForm;
 import chatting.chatting.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,9 +30,9 @@ public class MemberContoller {
     public String create(MemberForm form) {
 
         Member member = new Member();
-        member.setId(form.getId());
-        member.setPassword(form.getPassword());
-        member.setName(form.getName());
+        member.setMemberId(form.getMemberId());
+        member.setMemberPw(form.getMemberPw());
+        member.setMemberNm(form.getMemberNm());
 
         memberService.join(member);
 

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>chatting</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="/js/common/jquery-3.6.0.min.js"></script>
+    <script src="/js/common/sockjs.min.js"></script>
+    <script src="/js/common/stomp.min.js"></script>
+    <script th:inline="javascript">
+    /*<![CDATA[*/
+
+        var roomId = [[${roomId}]];
+        var sender = [[${sender}]];
+
+        $(document).ready(function(){
+
+            connect();
+
+            $("#sendMsgBtn").on("click", function(e) {
+                send();
+            });
+
+        });
+
+        function connect() {
+            var socket = new SockJS("/ws-stomp");
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function() {
+                stompClient.subscribe("/sub/comm/room/" + roomId, function(e) {
+                    showMessage(JSON.parse(e.body));
+
+                });
+                stompClient.send("/pub/comm/message", {}, JSON.stringify({'messageType':'ENTER', 'roomId':roomId, 'sender':sender}));
+            });
+        }
+
+        function disconnect() {
+            if(stompClient != null) {
+                stompClient.send("/pub/comm/message", {}, JSON.stringify({'messageType':'COMM', 'roomId':roomId, 'sender':sender, 'message':sender + "님이 나갔습니다."}));
+                stompClient.disconnect();
+            }
+        }
+
+        function send() {
+            var data = {'messageType':'COMM', 'roomId':roomId, 'sender':sender, 'message':$("#chatMsg").val()};
+            stompClient.send("/pub/comm/message", {}, JSON.stringify(data));
+            $("#chatMsg").val('');
+        }
+
+        function showMessage(e) {
+            var msgLi = "<li>" + e.sender + " : " + e.message + "</li>";
+            $("#msgList").append(msgLi);
+        }
+
+        window.onbeforeunload = function(e){
+            disconnect();
+        }
+
+    /*]]>*/
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="box">
+                <div>
+                    <h3 th:text="채팅방 + ${roomId}">채팅방 roomId</h3>
+                </div>
+                <div class="msgArea">
+                    <ul id="msgList">
+                    </ul>
+                </div>
+                <div class="chat-input">
+                    <input type="hidden" name="roomId" id="roomId" th:value="${roomId}">
+                    <input type="hidden" name="sender" id="sender" th:value="${sender}">
+                    <input type="text" name="chatMsg" id="chatMsg">
+                    <button type="button" id="sendMsgBtn">전송</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
