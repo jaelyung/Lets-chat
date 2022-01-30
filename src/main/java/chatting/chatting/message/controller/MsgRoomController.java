@@ -61,4 +61,18 @@ public class MsgRoomController {
         return msgService.createMsgRoom(name);
     }
 
+    @PostMapping("/room/findRndm")
+    public MsgRoom findRndmRoom(Model model, @RequestParam String name) {
+
+        MsgRoom rndmRoom = msgService.findRndmRoom();
+
+        //rndmRoom이 없을 경우 session user가 속해있는 랜덤 채팅방 생성
+        //createRoom() 의 변경 필요
+        if(rndmRoom.getRoomId() != "") {
+            rndmRoom = createRoom(name);
+        }
+
+        return rndmRoom;
+    }
+
 }
