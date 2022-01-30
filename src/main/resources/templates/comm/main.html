@@ -3,13 +3,36 @@
 <head>
     <title>chatting</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="/js/common/jquery-3.6.0.min.js"></script>
+    <script th:inline="javascript">
+    /*<![CDATA[*/
+
+    $(document).ready(function(){
+
+        $("#startRndmChat").on("click", function(e){
+        // 랜덤채팅 시작하기 누르면 채팅방 개설되었는지 자바에서 체크하는 로직으로 넘어가야함 -> 채팅방이 있으면 번호를 화면으로 넘겨주고, 없으면 생성해서 화면으로 넣어주기
+        // progress bar 를 생성해서 '채팅방을 찾는 중입니다' 넣을 수 있음
+            var url = "";
+
+        });
+
+    });
+
+
+
+
+
+
+
+    /*]]>*/
+    </script>
 </head>
 <body>
     <div class="wrap">
         <div class="container">
             <div class="box">
                 <div class="join">
-                    <a href="/comm/room/enter">랜덤채팅 시작하기</a>
+                    <a href="javascript:void(0);" id="startRndmChat">랜덤채팅 시작하기</a>
                 </div>
             </div>
         </div>

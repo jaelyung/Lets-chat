@@ -17,4 +17,5 @@ public interface MsgService {
 
     MsgRoom createMsgRoom(String name);
 
+    MsgRoom findRndmRoom();
 }
